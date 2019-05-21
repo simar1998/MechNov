@@ -5,6 +5,9 @@ import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The type Application setup.
+ */
 @ApplicationPath("/api")
 public class ApplicationSetup extends Application {
 
