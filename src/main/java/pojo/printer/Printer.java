@@ -1,5 +1,9 @@
-package pojo;
+package pojo.printer;
 
+import pojo.printer.descriptors.BuildVolume;
+import pojo.printer.descriptors.AccelerationMax;
+import pojo.printer.descriptors.MaxFeedrate;
+import pojo.printer.descriptors.StepsPerUnit;
 import serialcomms.SerialCommunicator;
 
 public class Printer {
@@ -10,11 +14,11 @@ public class Printer {
     String firmware;
     String printerDesc;
 
-    int maxX,maxY,maxZ;
+    BuildVolume buildVolume;
 
-    double setpsX, stepsY, stepsZ, stepsE; //Steps per mm for each axis and the extruder
-    double feedX,feedY,feedZ,feedE; //Max feed rate for each axis and the extruder
-    double accXMax, accYMax, accZmax, accEMax; //Max acceleration for each axis and the extruder
+    StepsPerUnit stepsPerUnit; //Steps per mm for each axis and the extruder
+    MaxFeedrate maxFeedrate; //Max feed rate for each axis and the extruder
+    AccelerationMax accelerationMax; //Max acceleration for each axis and the extruder
     double filamentFeedAccl, filamentRetractAccl; //Default filament retract and feed acceleration
     double minFeed, minTravelFeed, minSegmentTime, maxXYJerk, maxEJerk, maxZJerk;
     double homeOffsetX,homeOffsetY,homeOffsetZ;
