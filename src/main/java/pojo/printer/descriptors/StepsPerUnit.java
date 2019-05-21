@@ -1,10 +1,13 @@
 package pojo.printer.descriptors;
 
+import pojo.Command;
+
 /**
  * This descriptor class stores the steps per mm of a printer
  */
 public class StepsPerUnit {
 
+    String descriptor = "STEPS PER UNIT";
     /**
      * The Setps x.
      */
@@ -110,5 +113,11 @@ public class StepsPerUnit {
      */
     public void setStepsE(double stepsE) {
         this.stepsE = stepsE;
+    }
+
+    public void fromSerialOutput(String serialOutput){
+        String serialCommand = Command.getCommandFromDesc(descriptor).getCommand();
+        int indexOffCommand = serialOutput.indexOf(serialCommand);
+
     }
 }

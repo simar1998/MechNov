@@ -1,10 +1,16 @@
 package pojo;
 
+import java.util.ArrayList;
+
 /**
  * The type Command.
  */
 public class Command {
 
+    /**
+     * The constant commands.
+     */
+    public static ArrayList<Command> commands = new ArrayList<>();
     /**
      * The Firmware.
      */
@@ -113,5 +119,20 @@ public class Command {
      */
     public void setCommandDescLong(String commandDescLong) {
         this.commandDescLong = commandDescLong;
+    }
+
+    /**
+     * Gets command from desc command.
+     *
+     * @param commandDesc the command desc
+     * @return the command
+     */
+    public static Command getCommandFromDesc(String commandDesc){
+        for (Command command : Command.commands){
+            if (command.getCommandDesc().equals(commandDesc)){
+                return command;
+            }
+        }
+        return null;
     }
 }
