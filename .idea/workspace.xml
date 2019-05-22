@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="MechNovProjects:war" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a26e6411-f695-40a6-8fee-cd432cb992aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/Serializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/printer/PrinterHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/subroutines/thread/CommunicationThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jSerialComm-2.4.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MechNovProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MechNovProjects.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war/MechNovProjects_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war/MechNovProjects_war.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/api/ApplicationServletContextListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/api/ApplicationSetup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/api/ApplicationSetup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/api/CORSFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/api/CORSFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/api/TestAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/api/TestAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/Command.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/Printer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/Printer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/AccelerationSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/AccelerationSettings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/AdditionalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/AdditionalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/BuildVolume.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/BuildVolume.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/ControlLoopPID.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/ControlLoopPID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/HomeOffset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/HomeOffset.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/MaxFeedrate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/MaxFeedrate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/StepsPerUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/pojo/printer/descriptors/StepsPerUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/serialcomms/ListnerHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/serialcomms/ListnerHandler$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/serialcomms/ListnerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/serialcomms/ListnerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/serialcomms/SerialCommunicator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MechNovProjects_war_exploded.war/WEB-INF/classes/serialcomms/SerialCommunicator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/ApplicationServletContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subroutines/ApplicationServletContextListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pojo/printer/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/printer/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/AccelerationSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/AccelerationSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/AdditionalInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/AdditionalInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/BuildVolume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/BuildVolume.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/ControlLoopPID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/ControlLoopPID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/HomeOffset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/HomeOffset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/MaxFeedrate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/MaxFeedrate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/StepsPerUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/StepsPerUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/serialcomms/ListnerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serialcomms/ListnerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/ApplicationServletContextListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/ApplicationSetup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/CORSFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/TestAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/Printer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/printer/Printer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/printer/descriptors/AccelerationSettings.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/printer/descriptors/AdditionalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/printer/descriptors/BuildVolume.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/printer/descriptors/ControlLoopPID.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/printer/descriptors/HomeOffset.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/printer/descriptors/MaxFeedrate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/printer/descriptors/StepsPerUnit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/serialcomms/ListnerHandler$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/serialcomms/ListnerHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/serialcomms/SerialCommunicator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/serialcomms/SerialCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serialcomms/SerialCommunicator.java" afterDir="false" />
     </list>
     <manually-removed-from-ignored>
       <directory path="$PROJECT_DIR$/" />
@@ -48,20 +48,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/AccelerationSettings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="-1656">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/AdditionalInfo.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/subroutines/ApplicationServletContextListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1775">
-              <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+            <state relative-caret-position="221">
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,30 +72,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/Serializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="102">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Thread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-57">
+              <caret line="785" column="29" selection-start-line="785" selection-start-column="29" selection-end-line="785" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/serialcomms/SerialCommunicator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="259" column="5" lean-forward="true" selection-start-line="259" selection-start-column="5" selection-end-line="259" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/subroutines/thread/CommunicationThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding>
-                <element signature="e#142#143#0" expanded="true" />
-                <element signature="e#158#159#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/BuildVolume.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-823">
-              <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/ControlLoopPID.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-789">
-              <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -106,20 +117,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/MaxFeedrate.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/Printer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+            <state relative-caret-position="418">
+              <caret line="320" column="4" selection-start-line="320" selection-start-column="4" selection-end-line="320" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/StepsPerUnit.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/PrinterHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="128" selection-start-line="128" selection-end-line="128" />
+            <state relative-caret-position="170">
+              <caret line="10" column="58" lean-forward="true" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,19 +139,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/Printer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1931">
-              <caret line="319" selection-start-line="319" selection-end-line="319" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/serialcomms/ListnerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="241">
+              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
               <folding>
                 <element signature="e#354#362#0" expanded="true" />
                 <element signature="e#1307#1315#0" expanded="true" />
@@ -167,7 +169,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/Serializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/AccelerationSettings.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pojo/printer/Printer.java" />
         <option value="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/AdditionalInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/BuildVolume.java" />
         <option value="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/ControlLoopPID.java" />
@@ -175,8 +176,22 @@
         <option value="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/MaxFeedrate.java" />
         <option value="$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/StepsPerUnit.java" />
         <option value="$PROJECT_DIR$/src/main/java/serialcomms/ListnerHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/ApplicationServletContextListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/serialcomms/thread/CommunicationThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/subroutines/ApplicationServletContextListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/subroutines/thread/CommunicationThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/serialcomms/SerialCommunicator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pojo/printer/PrinterHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pojo/printer/Printer.java" />
       </list>
     </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" value="" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -271,7 +286,48 @@
             <path>
               <item name="MechNov" type="b2602c69:ProjectViewProjectNode" />
               <item name="MechNov" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="subroutines" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MechNov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MechNov" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="subroutines" type="462c0819:PsiDirectoryNode" />
+              <item name="thread" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MechNov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MechNov" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MechNov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MechNov" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MechNov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MechNov" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MechNov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MechNov" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MechNov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MechNov" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -287,6 +343,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SimarpalKalsi\Documents\GitHub\MechNov\web\WEB-INF\lib" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -300,8 +361,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="JBoss 16.0.0.Final - Wildfly" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 16.0.0.Final - Wildfly" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/MechNovProjects_war/" />
+    <configuration name="JBoss 16.0.0.Final - Wildfly" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 16.0.0.Final - Wildfly" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true" show_console_on_std_err="true" show_console_on_std_out="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="MechNovProjects:war">
@@ -316,6 +376,8 @@
         <option name="USERNAME" value="" />
         <option name="CREDENTIAL_ALIAS" />
       </server-settings>
+      <output_file is_save="true" />
+      <log_file alias="server.log" path="$USER_HOME$/Downloads/wildfly-16.0.0.Final/standalone/log/server.log" show_all="true" />
       <predefined_log_file enabled="true" id="JBoss" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="62637" />
@@ -383,12 +445,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558474130720</updated>
-      <workItem from="1558474133532" duration="2337000" />
+      <workItem from="1558474133532" duration="5120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3008000" />
+    <option name="totallyTimeSpent" value="5791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -404,12 +466,12 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -469,13 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/serialcomms/SerialCommunicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/database/DatabaseConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -504,46 +559,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/HomeOffset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/MaxFeedrate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/Serializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#158#159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/Printer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1931">
-          <caret line="319" selection-start-line="319" selection-end-line="319" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/serialcomms/ListnerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding>
-            <element signature="e#354#362#0" expanded="true" />
-            <element signature="e#1307#1315#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -557,10 +576,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fazecast/jSerialComm/2.5.1/jSerialComm-2.5.1.jar!/com/fazecast/jSerialComm/SerialPort.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="162" column="25" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/subroutines.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="785" column="29" selection-start-line="785" selection-start-column="29" selection-end-line="785" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/serialcomms/ListnerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding>
+            <element signature="e#354#362#0" expanded="true" />
+            <element signature="e#1307#1315#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/subroutines/ApplicationServletContextListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/serialcomms/SerialCommunicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="259" column="5" lean-forward="true" selection-start-line="259" selection-start-column="5" selection-end-line="259" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/subroutines/thread/CommunicationThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/HomeOffset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/Serializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/descriptors/AccelerationSettings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="-1656">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/PrinterHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="58" lean-forward="true" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pojo/printer/Printer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="320" column="4" selection-start-line="320" selection-start-column="4" selection-end-line="320" selection-end-column="4" />
         </state>
       </provider>
     </entry>

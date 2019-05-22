@@ -236,6 +236,33 @@ public class SerialCommunicator {
         }
     }
 
+    /**
+     * Gets the comm ports available
+     * @return
+     */
+    public static SerialPort[] getComPorts() {
+        System.out.println("getComPorts() CALLED...... APPLICATION LOOKING FOR PORTS");
+        SerialPort[] serialPorts = SerialPort.getCommPorts();
+        if (serialPorts.length == 0){
+            System.out.println("NO PORTS DETECTED");
+            return null;
+        }
+        for (SerialPort serialPort : serialPorts) {
+            System.out.println("Port Description : " + serialPort.getPortDescription());
+        }
+        return serialPorts;
+    }
+
+    public static SerialCommunicator createSerialCommunicator(SerialPort serialPort){
+        SerialCommunicator serialCommunicator = new SerialCommunicator();
+        serialCommunicator.setPortDescription(serialPort.getPortDescription());
+        return serialCommunicator;
+    }
+
+
+
+
+
 
 
 

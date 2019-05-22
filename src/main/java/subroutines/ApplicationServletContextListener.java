@@ -1,14 +1,17 @@
-package api;
+package subroutines;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import subroutines.thread.*;
 
 @WebListener
 public class ApplicationServletContextListener implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        System.out.print("Application Servlet Context Listener Initialized ");
+        System.out.println("Application Servlet Context Listener Initialized ");
+        Thread commsThread1 = new Thread(new CommunicationThread());
+        commsThread1.start();
     }
 
     @Override
