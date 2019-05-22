@@ -3,7 +3,7 @@ package pojo.printer.descriptors;
 /**
  * This descriptor class strores the maximum feedrate for a printer
  */
-public class MaxFeedrate {
+public class MaxFeedrate extends Serializer {
 
     /**
      * The Feed x.

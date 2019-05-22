@@ -3,7 +3,7 @@ package pojo.printer.descriptors;
 /**
  * The type Additional info.
  */
-public class AdditionalInfo {
+public class AdditionalInfo extends Serializer {
     /**
      * The Min feed.
      */
@@ -156,5 +156,6 @@ public class AdditionalInfo {
     public void setMaxZJerk(double maxZJerk) {
         this.maxZJerk = maxZJerk;
     }
+
 
 }

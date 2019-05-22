@@ -3,7 +3,7 @@ package pojo.printer.descriptors;
 /**
  * The type Home offset.
  */
-public class HomeOffset {
+public class HomeOffset extends Serializer {
     /**
      * The Home offset x.
      */

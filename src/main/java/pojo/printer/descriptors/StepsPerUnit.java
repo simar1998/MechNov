@@ -2,10 +2,12 @@ package pojo.printer.descriptors;
 
 import pojo.Command;
 
+import java.util.ArrayList;
+
 /**
  * This descriptor class stores the steps per mm of a printer
  */
-public class StepsPerUnit {
+public class StepsPerUnit extends Serializer {
 
     String descriptor = "STEPS PER UNIT";
     /**
@@ -115,9 +117,15 @@ public class StepsPerUnit {
         this.stepsE = stepsE;
     }
 
-    public void fromSerialOutput(String serialOutput){
+    public void fromSerialOutput(ArrayList<String> stringArrayList){
         String serialCommand = Command.getCommandFromDesc(descriptor).getCommand();
-        int indexOffCommand = serialOutput.indexOf(serialCommand);
+        String commandLine = "";
+        for (String line : stringArrayList){
+            if (line.contains(serialCommand)){
+                commandLine = line;
+                break;
+            }
+        }
 
     }
 }

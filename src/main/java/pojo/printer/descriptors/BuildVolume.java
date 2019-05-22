@@ -3,7 +3,7 @@ package pojo.printer.descriptors;
 /**
  * This Class stores the max values of the build volume
  */
-public class BuildVolume {
+public class BuildVolume extends Serializer {
 
     /**
      * The X.

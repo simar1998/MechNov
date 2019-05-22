@@ -1,9 +1,11 @@
 package pojo.printer.descriptors;
 
+import com.google.gson.Gson;
+
 /**
  * The type Max acceleration.
  */
-public class AccelerationSettings {
+public class AccelerationSettings extends Serializer {
     /**
      * The Max acceleration x.
      */
@@ -158,6 +160,7 @@ public class AccelerationSettings {
     public void setFilamentRetractAccl(double filamentRetractAccl) {
         this.filamentRetractAccl = filamentRetractAccl;
     }
+
 
 
 }

@@ -3,7 +3,7 @@ package pojo.printer.descriptors;
 /**
  * The type Control loop pid.
  */
-public class ControlLoopPID {
+public class ControlLoopPID extends Serializer {
     /**
      * The P.
      */

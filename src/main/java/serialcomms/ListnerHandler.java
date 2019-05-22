@@ -5,13 +5,14 @@ import com.fazecast.jSerialComm.SerialPortDataListener;
 import com.fazecast.jSerialComm.SerialPortEvent;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * The type Listner handler.
  */
 public class ListnerHandler {
 
-    public static
+   public static ArrayList<String> linesRead = new ArrayList<String>();
 
     /**
      * Attach reader listner.
@@ -36,7 +37,8 @@ public class ListnerHandler {
                 for (int i = 0; i < newData.length; ++i) {
                     System.out.print((char) newData[i]);
                 }
-                String[] lines = line.split("\\r?\\n");
+                ArrayList<String> lines = new ArrayList<String>(Arrays.asList( line.split("\\r?\\n")));
+                linesRead.addAll(lines);
                 System.out.println("\n");
             }
         });
