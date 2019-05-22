@@ -11,7 +11,7 @@ public class ApplicationServletContextListener implements ServletContextListener
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         System.out.println("Application Servlet Context Listener Initialized ");
         Thread commsThread1 = new Thread(new CommunicationThread());
-        commsThread1.start();
+        //commsThread1.start();
     }
 
     @Override

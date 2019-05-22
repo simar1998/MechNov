@@ -1,9 +1,11 @@
 package pojo.printer.descriptors;
 
+import java.util.ArrayList;
+
 /**
  * The type Additional info.
  */
-public class AdditionalInfo extends Serializer {
+public class AdditionalInfo extends Serializer implements Descriptors {
     /**
      * The Min feed.
      */
@@ -158,4 +160,8 @@ public class AdditionalInfo extends Serializer {
     }
 
 
+    @Override
+    public void populateObject(ArrayList<String> arrayList) {
+
+    }
 }

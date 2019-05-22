@@ -1,12 +1,13 @@
 package pojo.printer;
 
 import pojo.printer.descriptors.*;
+import serialcomms.SerialCommunicationHandler;
 import serialcomms.SerialCommunicator;
 
 /**
  * The type Printer.
  */
-public class Printer {
+public class Printer extends SerialCommunicationHandler {
 
     /**
      * The Serial communicator.
@@ -317,6 +318,11 @@ public class Printer {
     public void setHomeCentre(boolean homeCentre) {
         isHomeCentre = homeCentre;
     }
+
+    public void storeInDatabase(){
+        String stepsPerUnitJson = stepsPerUnit.jsonSerializable(stepsPerUnit);
+    }
+
 
 
 

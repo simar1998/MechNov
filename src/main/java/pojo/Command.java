@@ -34,6 +34,10 @@ public class Command {
     public Command() {
     }
 
+    public Command(String command){
+        this.command = command;
+    }
+
     /**
      * Instantiates a new Command.
      *
