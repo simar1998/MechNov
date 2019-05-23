@@ -1,10 +1,14 @@
 package pojo.printer.descriptors;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.ArrayList;
 
 /**
  * The type Max acceleration.
  */
+
 public class AccelerationSettings extends Serializer implements Descriptors {
     /**
      * The Max acceleration x.

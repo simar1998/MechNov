@@ -32,5 +32,4 @@ public class SerialCommunicationHandler extends ListnerHandler{
         serialCommunicator.openConnection();
         printer.setSerialCommunicator(serialCommunicator);
     }
-
 }
