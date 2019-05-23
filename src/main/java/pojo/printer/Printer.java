@@ -12,7 +12,7 @@ public class Printer extends SerialCommunicationHandler {
     /**
      * The Serial communicator.
      */
-    SerialCommunicator serialCommunicator;
+    SerialCommunicator serialCommunicator = new SerialCommunicator();
 
     /**
      * The Printer name.

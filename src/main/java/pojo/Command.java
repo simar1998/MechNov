@@ -12,7 +12,7 @@ public class Command {
      */
     public static ArrayList<Command> commands = new ArrayList<>();
     /**
-     * The Firmware.
+     * The Firmware
      */
     String firmware;
     /**

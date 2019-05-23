@@ -32,4 +32,16 @@ public class SerialCommunicationHandler extends ListnerHandler{
         serialCommunicator.openConnection();
         printer.setSerialCommunicator(serialCommunicator);
     }
+
+    public void connectToPrinter(Printer printer){
+        SerialCommunicator serialCommunicator = new SerialCommunicator(printer.getSerialCommunicator().getPortDescription(),printer.getSerialCommunicator().getBaud_rate());
+        serialCommunicator.openConnection();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        printer.setSerialCommunicator(serialCommunicator);
+    }
+
 }

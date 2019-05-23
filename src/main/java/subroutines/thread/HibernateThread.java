@@ -4,26 +4,42 @@ import org.hibernate.HibernateException;
 import org.hibernate.Metamodel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.Metadata;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-import org.hibernate.tool.hbm2ddl.SchemaExport;
-import org.hibernate.tool.schema.TargetType;
 import pojo.printer.descriptors.ControlLoopPID;
 
 import javax.persistence.metamodel.EntityType;
-import java.util.EnumSet;
 
+/**
+ * The type Hibernate thread.
+ */
 public class HibernateThread implements Runnable{
 
+    /**
+     * The Control loop pid.
+     */
     public ControlLoopPID controlLoopPID = new ControlLoopPID(1310,1114,2056);
 
+    /**
+     * The constant ourSessionFactory.
+     */
     public static SessionFactory ourSessionFactory;
 
+    /**
+     * Gets session.
+     *
+     * @return the session
+     * @throws HibernateException the hibernate exception
+     */
     public static SessionFactory getSession() throws HibernateException {
         return ourSessionFactory;
     }
 
+    /**
+     * Build session factory session factory.
+     *
+     * @return the session factory
+     */
     public static SessionFactory buildSessionFactory(){
         Configuration configuration = new Configuration();
         configuration.configure();
@@ -32,6 +48,9 @@ public class HibernateThread implements Runnable{
         return ourSessionFactory;
     }
 
+    /**
+     * Shut down.
+     */
     public static void shutDown(){
         ourSessionFactory.close();
     }

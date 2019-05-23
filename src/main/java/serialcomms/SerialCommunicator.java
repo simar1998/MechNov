@@ -13,6 +13,9 @@ import java.util.Scanner;
 public class SerialCommunicator {
 
 
+    /**
+     * The Serial port array list.
+     */
     public static ArrayList<SerialPort> serialPortArrayList;
     /**
      * The Is serial port connected.
@@ -63,7 +66,7 @@ public class SerialCommunicator {
      */
     public boolean openConnection(){
         if(comPort.openPort()){
-            try {Thread.sleep(500);
+            try {Thread.sleep(10000);
             serialPortArrayList.add(getSerialPort());
             } catch(Exception e){}
             return true;
@@ -98,7 +101,7 @@ public class SerialCommunicator {
      */
     public void setBaudRate(int baud_rate){
         this.baud_rate = baud_rate;
-        comPort.setBaudRate(this.baud_rate);
+        comPort.setBaudRate(baud_rate);
     }
 
     /**
@@ -168,6 +171,7 @@ public class SerialCommunicator {
      * @param s the s
      */
     public void serialWrite(String s){
+        System.out.println("WRITING TO SERIAL : " + s + " at " + baud_rate + " on " + portDescription);
         //writes the entire string at once.
         comPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         try{Thread.sleep(5);} catch(Exception e){}
@@ -243,7 +247,8 @@ public class SerialCommunicator {
 
     /**
      * Gets the comm ports available
-     * @return
+     *
+     * @return serial port [ ]
      */
     public static SerialPort[] getComPorts() {
         System.out.println("getComPorts() CALLED...... APPLICATION LOOKING FOR PORTS");
@@ -258,6 +263,12 @@ public class SerialCommunicator {
         return serialPorts;
     }
 
+    /**
+     * Create serial communicator serial communicator.
+     *
+     * @param serialPort the serial port
+     * @return the serial communicator
+     */
     public static SerialCommunicator createSerialCommunicator(SerialPort serialPort){
         SerialCommunicator serialCommunicator = new SerialCommunicator();
         serialCommunicator.setPortDescription(serialPort.getPortDescription());
@@ -265,12 +276,39 @@ public class SerialCommunicator {
     }
 
 
+    /**
+     * Is serial port connected boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isSerialPortConnected() {
+        return isSerialPortConnected;
+    }
 
+    /**
+     * Sets serial port connected.
+     *
+     * @param serialPortConnected the serial port connected
+     */
+    public void setSerialPortConnected(boolean serialPortConnected) {
+        isSerialPortConnected = serialPortConnected;
+    }
 
+    /**
+     * Gets baud rate.
+     *
+     * @return the baud rate
+     */
+    public int getBaud_rate() {
+        return baud_rate;
+    }
 
-
-
-
-
-
+    /**
+     * Sets baud rate.
+     *
+     * @param baud_rate the baud rate
+     */
+    public void setBaud_rate(int baud_rate) {
+        this.baud_rate = baud_rate;
+    }
 }

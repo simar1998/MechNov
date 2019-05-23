@@ -1,6 +1,10 @@
 package subroutines;
 
+import pojo.Command;
+import pojo.printer.Printer;
+import serialcomms.SerialCommunicator;
 import subroutines.thread.HibernateThread;
+import subroutines.thread.PrinterCommunicationHandler;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -10,10 +14,11 @@ import javax.servlet.annotation.WebListener;
 public class ApplicationServletContextListener implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        System.out.println("Application Servlet Context Listener Initialized ");
-        HibernateThread.buildSessionFactory();
-        Thread commsThread1 = new Thread(new HibernateThread());
-        commsThread1.start();
+
+        //SerialCommunicator serialCommunicator = new SerialCommunicator("COM3" , 115200);
+        //serialCommunicator.serialWrite("G28"  + " \r\n\r\n ");
+        //PrinterCommunicationHandler.getPrinterBundle("Ender 3");
+
     }
 
     @Override
