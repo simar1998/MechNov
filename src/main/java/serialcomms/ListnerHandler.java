@@ -12,15 +12,15 @@ import java.util.Arrays;
  */
 public class ListnerHandler {
 
-   public static ArrayList<String> linesRead = new ArrayList<String>();
+    public ArrayList<String> responses = new ArrayList<String>();
 
     /**
      * Attach reader listner.
      *
      * @param serialCommunicator the serial communicator
      */
-    public static void attachReaderListner(SerialCommunicator serialCommunicator){
-        SerialPort serialPort = serialCommunicator.getOpenConnection();
+    public void attachReaderListner(SerialCommunicator serialCommunicator){
+        SerialPort serialPort = serialCommunicator.getSerialPort();
 
         if(serialPort == null){
             System.out.println("Serial Port not null in Listner Handler Class");
@@ -31,18 +31,27 @@ public class ListnerHandler {
             public int getListeningEvents() { return SerialPort.LISTENING_EVENT_DATA_RECEIVED; }
             public void serialEvent(SerialPortEvent event)
             {
-                String line = "";
+                String response = "";
                 byte[] newData = event.getReceivedData();
                 System.out.println("Received data of size: " + newData.length);
                 for (int i = 0; i < newData.length; ++i) {
                     System.out.print((char) newData[i]);
+                   // response += (char) newData[i];
                 }
-                ArrayList<String> lines = new ArrayList<String>(Arrays.asList( line.split("\\r?\\n")));
-                linesRead.addAll(lines);
+                //ArrayList<String> lines =
+                responses.add(response);
+                //System.out.println("RESPONSE : " + response);
                 System.out.println("\n");
             }
         });
     }
 
+    public ArrayList<String> getResponses() {
+        return responses;
+    }
+
+    public void setResponses(ArrayList<String> responses) {
+        this.responses = responses;
+    }
 
 }

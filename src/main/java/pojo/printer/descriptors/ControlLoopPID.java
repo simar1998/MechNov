@@ -1,19 +1,36 @@
 package pojo.printer.descriptors;
 
+import javax.persistence.*;
+
 /**
  * The type Control loop pid.
  */
+@Entity
+@Table(name = "PID")
 public class ControlLoopPID extends Serializer {
+
+    /**
+     * The Id.
+     */
+    @Id
+    @Column(name = "id")
+    @GeneratedValue
+    int id;
     /**
      * The P.
      */
-    double P, /**
+    @Column(name = "P")
+    double P;
+    /**
      * The .
      */
-    I, /**
+    @Column(name = "I")
+    double I;
+    /**
      * The D.
      */
-    D;
+    @Column(name = "D")
+    double D;
 
     /**
      * Instantiates a new Control loop pid.
@@ -88,4 +105,17 @@ public class ControlLoopPID extends Serializer {
         D = d;
     }
 
+    /**
+     * To String method for Control Loop PID
+     * @return
+     */
+    @Override
+    public String toString() {
+        return "ControlLoopPID{" +
+                "id=" + id +
+                ", P=" + P +
+                ", I=" + I +
+                ", D=" + D +
+                '}';
+    }
 }

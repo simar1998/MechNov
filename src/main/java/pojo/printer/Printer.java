@@ -1,17 +1,13 @@
 package pojo.printer;
 
 import pojo.printer.descriptors.*;
+import serialcomms.SerialCommunicationHandler;
 import serialcomms.SerialCommunicator;
 
 /**
  * The type Printer.
  */
-public class Printer {
-
-    /**
-     * The Id.
-     */
-    int id;
+public class Printer extends SerialCommunicationHandler {
 
     /**
      * The Serial communicator.
@@ -89,11 +85,10 @@ public class Printer {
      * @param homeOffset           the home offset
      * @param controlLoopPID       the control loop pid
      * @param isHomeCentre         the is home centre
-     * @param id                   the id
      */
     public Printer(SerialCommunicator serialCommunicator, String printerName, String firmware, String printerDesc, BuildVolume buildVolume,
                    StepsPerUnit stepsPerUnit, MaxFeedrate maxFeedrate, AccelerationSettings accelerationSettings, AdditionalInfo additionalInfo, HomeOffset homeOffset,
-                   ControlLoopPID controlLoopPID, boolean isHomeCentre, int id) {
+                   ControlLoopPID controlLoopPID, boolean isHomeCentre) {
         this.serialCommunicator = serialCommunicator;
         this.printerName = printerName;
         this.firmware = firmware;
@@ -106,7 +101,6 @@ public class Printer {
         this.homeOffset = homeOffset;
         this.controlLoopPID = controlLoopPID;
         this.isHomeCentre = isHomeCentre;
-        this.id= id;
     }
 
     /**
@@ -325,23 +319,11 @@ public class Printer {
         isHomeCentre = homeCentre;
     }
 
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
+    public void storeInDatabase(){
+        String stepsPerUnitJson = stepsPerUnit.jsonSerializable(stepsPerUnit);
     }
 
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-//String controlLoopPidJson = controlLoopPID.jsonSerializable(controlLoopPID);
+
+
 
 }

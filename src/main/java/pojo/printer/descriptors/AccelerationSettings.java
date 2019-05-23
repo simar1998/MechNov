@@ -1,11 +1,15 @@
 package pojo.printer.descriptors;
 
-import com.google.gson.Gson;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.util.ArrayList;
 
 /**
  * The type Max acceleration.
  */
-public class AccelerationSettings extends Serializer {
+
+public class AccelerationSettings extends Serializer implements Descriptors {
     /**
      * The Max acceleration x.
      */
@@ -162,5 +166,8 @@ public class AccelerationSettings extends Serializer {
     }
 
 
+    @Override
+    public void populateObject(ArrayList<String> arrayList) {
 
+    }
 }

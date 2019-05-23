@@ -1,34 +1,32 @@
 package subroutines.thread;
 
 import com.fazecast.jSerialComm.SerialPort;
-import serialcomms.ListnerHandler;
+import com.fazecast.jSerialComm.SerialPortDataListener;
+import com.fazecast.jSerialComm.SerialPortEvent;
+import pojo.Command;
+import pojo.printer.Printer;
 import serialcomms.SerialCommunicator;
 
 public class CommunicationThread implements Runnable {
 
     @Override
     public void run() {
-        SerialPort[] serialPorts = SerialPort.getCommPorts();
 
-        for (SerialPort port : serialPorts) {
-            System.out.println(port.getSystemPortName());
-        }
-
-        SerialCommunicator serialCommunicator = new SerialCommunicator("COM3",115200);
-        serialCommunicator.openConnection();
+       SerialPort.getCommPort("COM3").closePort();
+        Printer printer = new Printer();
+        printer.connectToPrinter("COM3",115200, printer);
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+       // printer.attachReaderListner(printer.getSerialCommunicator());
+       // System.out.println("Config String : " + printer.getConfigStringLines());
+       printer.sendCommandToPrinter(new Command("G28"), printer);
 
-        ListnerHandler.attachReaderListner(serialCommunicator);
+        printer.getSerialCommunicator().closeConnection();
 
-        serialCommunicator.serialWrite("G28"+ " \r\n\r\n ");
-        // System.out.println(serialCommunicator.serialRead(200));   Could not get past that as it was a open while loop
-        final SerialPort comPort =serialCommunicator.getSerialPort();
-        serialCommunicator.serialWrite("M115"+ " \r\n\r\n ");
-        serialCommunicator.serialWrite("M104 S50" + " \r\n\r\n ");
+
     }
 
 }

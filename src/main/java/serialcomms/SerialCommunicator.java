@@ -3,6 +3,7 @@ package serialcomms;
 import com.fazecast.jSerialComm.SerialPort;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -11,6 +12,8 @@ import java.util.Scanner;
  */
 public class SerialCommunicator {
 
+
+    public static ArrayList<SerialPort> serialPortArrayList;
     /**
      * The Is serial port connected.
      */
@@ -60,7 +63,9 @@ public class SerialCommunicator {
      */
     public boolean openConnection(){
         if(comPort.openPort()){
-            try {Thread.sleep(100);} catch(Exception e){}
+            try {Thread.sleep(500);
+            serialPortArrayList.add(getSerialPort());
+            } catch(Exception e){}
             return true;
         }
         else {

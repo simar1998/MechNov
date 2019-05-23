@@ -15,7 +15,6 @@ public class DatabaseConfig {
         localConnector.setUserPassword("mechsoljavaapp123");
         localConnector.loadJDBCDriver();
         localMySQL = localConnector.getConnection();
-
         return  localMySQL;
     }
 }
