@@ -1,26 +1,49 @@
 package pojo.printer.descriptors;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.ArrayList;
 
 /**
  * This descriptor class stores the steps per mm of a printer
  */
+@Entity
+@Table(name = "StepsPerUnit")
 public class StepsPerUnit extends Serializer implements Descriptors {
+    /**
+     * The Id.
+     */
+    @Id
+    @Column(name = "Id")
+    int id;
 
+    /**
+     * The Descriptor.
+     */
+    @Column(name = "Descriptor")
     String descriptor = "STEPS PER UNIT";
     /**
      * The Setps x.
      */
-    double setpsX, /**
+    @Column(name = "setpsX")
+    double setpsX;
+    /**
      * The Steps y.
      */
-    stepsY, /**
+    @Column(name = "setpsY")
+    double stepsY;
+    /**
      * The Steps z.
      */
-    stepsZ, /**
+    @Column(name = "setpsZ")
+    double stepsZ;
+    /**
      * The Steps e.
      */
-    stepsE;
+    @Column(name = "setpsE")
+    double stepsE;
 
     /**
      * Instantiates a new Steps per unit.
@@ -115,6 +138,41 @@ public class StepsPerUnit extends Serializer implements Descriptors {
         this.stepsE = stepsE;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * Gets descriptor.
+     *
+     * @return the descriptor
+     */
+    public String getDescriptor() {
+        return descriptor;
+    }
+
+    /**
+     * Sets descriptor.
+     *
+     * @param descriptor the descriptor
+     */
+    public void setDescriptor(String descriptor) {
+        this.descriptor = descriptor;
+    }
 
     @Override
     public void populateObject(ArrayList<String> arrayList) {

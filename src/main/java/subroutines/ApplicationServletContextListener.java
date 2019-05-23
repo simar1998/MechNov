@@ -13,7 +13,10 @@ public class ApplicationServletContextListener implements ServletContextListener
         System.out.println("Application Servlet Context Listener Initialized ");
         HibernateThread.buildSessionFactory();
         Thread commsThread1 = new Thread(new HibernateThread());
-        commsThread1.start();
+       // commsThread1.start();
+
+
+
     }
 
     @Override

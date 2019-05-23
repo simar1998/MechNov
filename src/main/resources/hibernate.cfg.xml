@@ -22,6 +22,15 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="pojo.printer.descriptors.ControlLoopPID"/>
-
+        <mapping class="pojo.printer.descriptors.AccelerationSettings"/>
+        <mapping class="pojo.printer.descriptors.AdditionalInfo"/>
+        <mapping class="pojo.printer.descriptors.BuildVolume"/>
+        <mapping class="pojo.printer.descriptors.HomeOffset"/>
+        <mapping class="pojo.printer.descriptors.MaxFeedrate"/>
+        <mapping class="pojo.printer.descriptors.StepsPerUnit"/>
+        <!--<editor-fold desc="Description">-->
+        <mapping class="pojo.printer.Printer"/>
+        <mapping class="serialcomms.SerialCommunicator"/>
+        <!--</editor-fold>-->
     </session-factory>
 </hibernate-configuration>

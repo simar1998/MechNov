@@ -1,23 +1,49 @@
 package pojo.printer.descriptors;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * This descriptor class strores the maximum feedrate for a printer
  */
+@Entity
+@Table(name = "MaxFeedrate")
 public class MaxFeedrate extends Serializer {
+    /**
+     * The Id.
+     */
+    @Id
+    @Column(name = "Id")
+    int id;
+
+    /**
+     * The Descriptor.
+     */
+    @Column(name = "Descriptor")
+    String descriptor = "Maximum feedrates";
 
     /**
      * The Feed x.
      */
-    double feedX, /**
+    @Column(name = "feedX")
+    double feedX;
+    /**
      * The Feed y.
      */
-    feedY, /**
+    @Column(name = "feedY")
+    double feedY;
+    /**
      * The Feed z.
      */
-    feedZ, /**
+    @Column(name = "feedZ")
+    double feedZ;
+    /**
      * The Feed e.
      */
-    feedE;
+    @Column(name = "feedE")
+    double feedE;
 
     /**
      * Instantiates a new Max feedrate.
@@ -110,5 +136,41 @@ public class MaxFeedrate extends Serializer {
      */
     public void setFeedE(double feedE) {
         this.feedE = feedE;
+    }
+
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * Gets descriptor.
+     *
+     * @return the descriptor
+     */
+    public String getDescriptor() {
+        return descriptor;
+    }
+
+    /**
+     * Sets descriptor.
+     *
+     * @param descriptor the descriptor
+     */
+    public void setDescriptor(String descriptor) {
+        this.descriptor = descriptor;
     }
 }

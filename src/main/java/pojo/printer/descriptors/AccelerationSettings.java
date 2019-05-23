@@ -2,35 +2,62 @@ package pojo.printer.descriptors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.ArrayList;
 
 /**
  * The type Max acceleration.
  */
-
+@Entity
+@Table(name = "AccelerationSettings")
 public class AccelerationSettings extends Serializer implements Descriptors {
+
+
+    /**
+     * The Id.
+     */
+    @Id
+    @Column(name = "Id")
+    int id;
+
+    /**
+     * The Descriptor.
+     */
+    @Column(name = "Descriptor")
+    String descriptor = "Acceleration";
+
     /**
      * The Max acceleration x.
      */
-    double maxAccelerationX, /**
+    @Column(name = "maxAccelerationX")
+    double maxAccelerationX;
+    /**
      * The Max acceleration y.
      */
-    maxAccelerationY, /**
+    @Column(name = "maxAccelerationY")
+    double maxAccelerationY;
+    /**
      * The Max acceleration z.
      */
-    maxAccelerationZ, /**
+    @Column(name = "maxAccelerationZ")
+    double maxAccelerationZ;
+    /**
      * The Max acceleration e.
      */
-    maxAccelerationE;
+    @Column(name = "maxAccelerationE")
+    double maxAccelerationE;
 
     /**
      * The Filament feed accl.
      */
-    double filamentFeedAccl, /**
+    @Column(name = "filamentFeedAccl")
+    double filamentFeedAccl;
+    /**
      * The Filament retract accl.
      */
-    filamentRetractAccl;
+    @Column(name ="filamentRetractAccl")
+    double filamentRetractAccl;
 
     /**
      * Instantiates a new Max acceleration.
@@ -165,9 +192,45 @@ public class AccelerationSettings extends Serializer implements Descriptors {
         this.filamentRetractAccl = filamentRetractAccl;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * Gets descriptor.
+     *
+     * @return the descriptor
+     */
+    public String getDescriptor() {
+        return descriptor;
+    }
+
+    /**
+     * Sets descriptor.
+     *
+     * @param descriptor the descriptor
+     */
+    public void setDescriptor(String descriptor) {
+        this.descriptor = descriptor;
+    }
 
     @Override
     public void populateObject(ArrayList<String> arrayList) {
 
     }
+
 }

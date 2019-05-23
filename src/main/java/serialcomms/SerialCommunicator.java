@@ -2,6 +2,7 @@ package serialcomms;
 
 import com.fazecast.jSerialComm.SerialPort;
 
+import javax.persistence.*;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,17 +11,35 @@ import java.util.Scanner;
 /**
  * The type Serial communicator.
  */
+@Entity
+@Table(name = "SerialCommunicator")
 public class SerialCommunicator {
 
-
+    /**
+     * The Serial port array list.
+     */
+    @Transient
     public static ArrayList<SerialPort> serialPortArrayList;
     /**
      * The Is serial port connected.
      */
+    @Transient
     boolean isSerialPortConnected;
 
-    private SerialPort comPort;
+    /**
+     * The Id.
+     */
+    @Id
+    @Column(name = "Id")
+    int id;
+
+    @Transient
+    SerialPort comPort;
+
+    @Column(name = "portDescription")
     private String portDescription;
+
+    @Column(name = "Baud_Rate")
     private int baud_rate;
 
     /**
@@ -243,7 +262,8 @@ public class SerialCommunicator {
 
     /**
      * Gets the comm ports available
-     * @return
+     *
+     * @return serial port [ ]
      */
     public static SerialPort[] getComPorts() {
         System.out.println("getComPorts() CALLED...... APPLICATION LOOKING FOR PORTS");
@@ -258,6 +278,12 @@ public class SerialCommunicator {
         return serialPorts;
     }
 
+    /**
+     * Create serial communicator serial communicator.
+     *
+     * @param serialPort the serial port
+     * @return the serial communicator
+     */
     public static SerialCommunicator createSerialCommunicator(SerialPort serialPort){
         SerialCommunicator serialCommunicator = new SerialCommunicator();
         serialCommunicator.setPortDescription(serialPort.getPortDescription());
@@ -265,12 +291,21 @@ public class SerialCommunicator {
     }
 
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
 
-
-
-
-
-
-
-
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
 }
