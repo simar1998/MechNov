@@ -2,7 +2,6 @@ package serialcomms;
 
 import com.fazecast.jSerialComm.SerialPort;
 
-import javax.persistence.*;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -262,8 +261,7 @@ public class SerialCommunicator {
 
     /**
      * Gets the comm ports available
-     *
-     * @return serial port [ ]
+     * @return
      */
     public static SerialPort[] getComPorts() {
         System.out.println("getComPorts() CALLED...... APPLICATION LOOKING FOR PORTS");
@@ -278,12 +276,6 @@ public class SerialCommunicator {
         return serialPorts;
     }
 
-    /**
-     * Create serial communicator serial communicator.
-     *
-     * @param serialPort the serial port
-     * @return the serial communicator
-     */
     public static SerialCommunicator createSerialCommunicator(SerialPort serialPort){
         SerialCommunicator serialCommunicator = new SerialCommunicator();
         serialCommunicator.setPortDescription(serialPort.getPortDescription());
@@ -291,6 +283,32 @@ public class SerialCommunicator {
     }
 
 
+    /**
+     * Is serial port connected boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isSerialPortConnected() {
+        return isSerialPortConnected;
+    }
+
+    /**
+     * Sets serial port connected.
+     *
+     * @param serialPortConnected the serial port connected
+     */
+    public void setSerialPortConnected(boolean serialPortConnected) {
+        isSerialPortConnected = serialPortConnected;
+    }
+
+    /**
+     * Gets baud rate.
+     *
+     * @return the baud rate
+     */
+    public int getBaud_rate() {
+        return baud_rate;
+    }
     /**
      * Gets id.
      *
