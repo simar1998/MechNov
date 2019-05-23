@@ -9,6 +9,11 @@ import serialcomms.SerialCommunicator;
 public class Printer {
 
     /**
+     * The Id.
+     */
+    int id;
+
+    /**
      * The Serial communicator.
      */
     SerialCommunicator serialCommunicator;
@@ -84,10 +89,11 @@ public class Printer {
      * @param homeOffset           the home offset
      * @param controlLoopPID       the control loop pid
      * @param isHomeCentre         the is home centre
+     * @param id                   the id
      */
     public Printer(SerialCommunicator serialCommunicator, String printerName, String firmware, String printerDesc, BuildVolume buildVolume,
                    StepsPerUnit stepsPerUnit, MaxFeedrate maxFeedrate, AccelerationSettings accelerationSettings, AdditionalInfo additionalInfo, HomeOffset homeOffset,
-                   ControlLoopPID controlLoopPID, boolean isHomeCentre) {
+                   ControlLoopPID controlLoopPID, boolean isHomeCentre, int id) {
         this.serialCommunicator = serialCommunicator;
         this.printerName = printerName;
         this.firmware = firmware;
@@ -100,6 +106,7 @@ public class Printer {
         this.homeOffset = homeOffset;
         this.controlLoopPID = controlLoopPID;
         this.isHomeCentre = isHomeCentre;
+        this.id= id;
     }
 
     /**
@@ -318,6 +325,23 @@ public class Printer {
         isHomeCentre = homeCentre;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+//String controlLoopPidJson = controlLoopPID.jsonSerializable(controlLoopPID);
 
 }
