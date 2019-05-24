@@ -1,13 +1,16 @@
 package api;
 
+import org.hibernate.Query;
+
 import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
 import pojo.Command;
-import pojo.crud.HelperCRUD;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import pojo.crud.HelperCRUD;
+import subroutines.thread.HibernateThread;
+
+
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.awt.*;
 import java.io.IOException;
@@ -36,5 +39,18 @@ public class CommandAPI {
         HelperCRUD.saveObjectIntoDB(commandObj);
 
         return "Command Added Successfully!";
+    }
+
+
+    @GET
+    @Path("/getAllCommand")
+    @Produces("text/plain")
+    public String getAllCommand(){
+        HibernateThread.buildSessionFactory();
+        Thread hibernateThread = new Thread(new HibernateThread());
+        hibernateThread.start();
+        String tableName = "from Command";
+        Query query = HibernateThread.getSession().openSession().createQuery(tableName);
+        return query.list().toString();
     }
 }
