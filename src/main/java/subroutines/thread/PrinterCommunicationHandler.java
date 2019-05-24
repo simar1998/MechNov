@@ -87,6 +87,7 @@ public class PrinterCommunicationHandler {
 
 
 
+
     /**
      * The type Printer bundle.
      */

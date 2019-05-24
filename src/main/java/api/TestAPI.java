@@ -1,7 +1,9 @@
 package api;
 
+import com.fazecast.jSerialComm.SerialPort;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
 import pojo.Command;
 import pojo.printer.Printer;
 import pojo.printer.descriptors.ControlLoopPID;
@@ -10,7 +12,10 @@ import subroutines.thread.PrinterCommThread;
 import subroutines.thread.HibernateThread;
 import subroutines.thread.PrinterCommunicationHandler;
 
+import javax.ejb.PostActivate;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import java.io.IOException;
 
 /**
  * The type Test api.
@@ -59,36 +64,46 @@ public class TestAPI {
     }
 
 
-    @GET
-    @Path("testCommand/{command}")
+    @POST
+    @Path("testCommand")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces("text/plain")
-    public String testCommandToPrinter(@PathParam("command") String command) throws InterruptedException {
-        if (PrinterCommunicationHandler.getPrinterBundle("Ender 3").getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen()) {
-            System.out.println("PRINTER STATUS : " + PrinterCommunicationHandler.getPrinterBundle("Ender 3").getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen());
-            PrinterCommunicationHandler.getPrinterBundle("Ender 3").getPrinterCommThread().getPrinter().sendCommandToPrinter(new Command(command), PrinterCommunicationHandler.getPrinterBundle("Ender 3").getPrinter());
+    public String testCommandToPrinter(MultipartFormDataInput multipart) throws IOException {
+
+        String printerName = multipart.getFormDataPart("printerName",String.class,null);
+        String command = multipart.getFormDataPart("command",String.class,null);
+
+        if (PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen()) {
+            System.out.println("PRINTER STATUS : " + PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen());
+            //PrinterCommunicationHandler.getPrinterBundle("Ender 3").getPrinterCommThread().getPrinter().sendCommandToPrinter(new Command(command), PrinterCommunicationHandler.getPrinterBundle("Ender 3").getPrinter());
+            PrinterCommunicationHandler.sendCommand(printerName, new Command(command));
         }
         return "Command Sent";
     }
 
-    @GET
-    @Path("/connectToPrinter/{printerName}")
+    @POST
+    @Path("/connectToPrinter")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces("text/plain")
-    public String connectToPrinter(@PathParam("printerName") String printerName) {
+    public String connectToPrinter(MultipartFormDataInput multipart) throws IOException {
+
+        String printerName = multipart.getFormDataPart("printerName",String.class,null);
+        String comPort = multipart.getFormDataPart("comPort",String.class,null);
         Printer printer = new Printer();
-        printer.setPrinterName("Ender 3");
-        printer.setSerialCommunicator(new SerialCommunicator("COM3", 115200));
-        printer.getSerialCommunicator().setPortDescription("COM3");
+        printer.setPrinterName(printerName);
+        printer.setSerialCommunicator(new SerialCommunicator(comPort, 115200));
+        printer.getSerialCommunicator().setPortDescription(comPort);
         PrinterCommunicationHandler.addPrinterToStack(printer, true);
 
         for (int i = 0; i < 5; i++) {
-            if (PrinterCommunicationHandler.getPrinterBundle("Ender 3").getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen()) {
+            if (PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen()) {
                 try {
                     Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("PRINTER STATUS : " + PrinterCommunicationHandler.getPrinterBundle("Ender 3").getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen());
-                PrinterCommunicationHandler.getPrinterBundle("Ender 3").getPrinterCommThread().getPrinter().sendCommandToPrinter(new Command("G28"), printer);
+                System.out.println("PRINTER STATUS : " + PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen());
+                PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinterCommThread().getPrinter().sendCommandToPrinter(new Command("G28"), printer);
                 return printerName + " is connected";
             } else {
                 break;
@@ -104,7 +119,23 @@ public class TestAPI {
     @Produces("text/plain")
     public String checkPrinterStatus(@PathParam("printerName") String printerName) {
 
-        return PrinterCommunicationHandler.getPrinterBundle("Ender 3").getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen() + "";
+        return PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen() + "";
+    }
+
+    @GET
+    @Path("/getComPorts")
+    @Produces("text/plain")
+    public String getComPorts() {
+        String comPorts = "";
+        try {
+            for (SerialPort serialPort : SerialCommunicator.getComPorts()) {
+                comPorts = comPorts + " " + serialPort.getSystemPortName();
+            }
+        }
+        catch (NullPointerException e){
+            return "NO OPEN PORTS AVAILABLE";
+        }
+        return comPorts;
     }
 }
 
