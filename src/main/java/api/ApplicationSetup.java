@@ -17,6 +17,7 @@ public class ApplicationSetup extends Application {
         set.add(CORSFilter.class);
         set.add(TestAPI.class);
         set.add(CommandAPI.class);
+        set.add(CommunicationAPI.class);
         return set;
     }
 }

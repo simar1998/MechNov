@@ -84,6 +84,19 @@ public class PrinterCommunicationHandler {
         throw new RuntimeException("Printer Does not exist");
     }
 
+    /**
+     * Returns all the connected printer object
+     * @return
+     */
+    public static ArrayList<Printer> getConnectedPrinter(){
+        ArrayList<Printer> printers = new ArrayList<>();
+        for (PrinterBundle printerBundle : PrinterCommunicationHandler.printers){
+            if (printerBundle.getPrinterCommThread().getPrinter().getSerialCommunicator().isSerialPortConnected()){
+                printers.add(printerBundle.getPrinter());
+            }
+        }
+        return printers;
+    }
 
 
 

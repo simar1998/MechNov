@@ -36,7 +36,7 @@ public class PrinterCommThread implements Runnable {
             printer.connectToPrinter(printer);
         }
         else {
-            throw new PrinterCommunicationException("Cannot start printer thread, please make sure connection is open and printer object is assigned to PrinterCommThread");
+            //throw new PrinterCommunicationException("Cannot start printer thread, please make sure connection is open and printer object is assigned to PrinterCommThread");
         }
     }
 
