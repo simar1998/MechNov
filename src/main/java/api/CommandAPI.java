@@ -46,9 +46,6 @@ public class CommandAPI {
     @Path("/getAllCommand")
     @Produces("text/plain")
     public String getAllCommand(){
-        HibernateThread.buildSessionFactory();
-        Thread hibernateThread = new Thread(new HibernateThread());
-        hibernateThread.start();
         String tableName = "from Command";
         Query query = HibernateThread.getSession().openSession().createQuery(tableName);
         return query.list().toString();

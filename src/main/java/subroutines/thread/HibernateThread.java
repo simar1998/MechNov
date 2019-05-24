@@ -18,7 +18,7 @@ public class HibernateThread implements Runnable{
     /**
      * The Control loop pid.
      */
-    public ControlLoopPID controlLoopPID = new ControlLoopPID(1310,1114,2056);
+    //public ControlLoopPID controlLoopPID = new ControlLoopPID(1310,1114,2056);
 
     /**
      * The constant ourSessionFactory.
@@ -69,8 +69,6 @@ public class HibernateThread implements Runnable{
                     System.out.println("  " + o.toString());
                 }
             }
-            session.save(controlLoopPID);
-            session.getTransaction().commit();
         } finally {
             session.close();
         }

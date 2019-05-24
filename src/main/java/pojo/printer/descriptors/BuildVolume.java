@@ -1,9 +1,6 @@
 package pojo.printer.descriptors;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * This Class stores the max values of the build volume
@@ -18,6 +15,7 @@ public class BuildVolume extends Serializer {
      */
     @Id
     @Column(name = "Id")
+    @GeneratedValue
     int id;
 
     /**

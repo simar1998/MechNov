@@ -39,7 +39,7 @@ public class TestAPI {
     @Path("testDB")
     @Produces("text/plain")
     public String testDB() {
-        String fromPID = "from ControlLoopPID";
+        String fromPID = "from BuildVolume";
         Query query = HibernateThread.getSession().openSession().createQuery(fromPID);
         return query.list().toString();
     }

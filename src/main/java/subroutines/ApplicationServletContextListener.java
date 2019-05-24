@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebListener;
 public class ApplicationServletContextListener implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-
+        System.out.println("Application Servlet Context Listener Initialized");
         HibernateThread.buildSessionFactory();
         Thread hibernateThread = new Thread(new HibernateThread());
         hibernateThread.start();

@@ -7,6 +7,7 @@ import pojo.printer.Printer;
 import serialcomms.SerialCommunicator;
 import subroutines.thread.PrinterCommunicationHandler;
 
+import javax.ejb.PostActivate;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
@@ -29,7 +30,16 @@ public class CommunicationAPI {
         String printerName = multipart.getFormDataPart("printerName",String.class,null);
         String command = multipart.getFormDataPart("command",String.class,null);
 
-        if (PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen()) {
+        String printerName2 = multipart.getFormDataPart("printerName2",String.class,null);
+
+        if(printerName2 != null){
+            System.out.println("PRINTER STATUS : " + PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen());
+            PrinterCommunicationHandler.sendCommand(printerName, new Command(command));
+            System.out.println("PRINTER STATUS : " + PrinterCommunicationHandler.getPrinterBundle(printerName2).getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen());
+            PrinterCommunicationHandler.sendCommand(printerName2, new Command(command));
+        }
+
+        else if (PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen()) {
             System.out.println("PRINTER STATUS : " + PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinterCommThread().getPrinter().getSerialCommunicator().getSerialPort().isOpen());
             PrinterCommunicationHandler.sendCommand(printerName, new Command(command));
         }
@@ -125,6 +135,18 @@ public class CommunicationAPI {
         }
         return connectedPrinters;
     }
+
+    @GET
+    @Path("getPrinterResponses")
+    @Produces("text/plain")
+    public String getPrinterResponses(MultipartFormDataInput multipartFormDataInput) throws IOException {
+
+        String printerName = multipartFormDataInput.getFormDataPart("printerName", String.class, null);
+        return PrinterCommunicationHandler.getPrinterBundle(printerName).getPrinter().getResponses().toString();
+    }
+
+
+
 
 
 

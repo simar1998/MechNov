@@ -42,6 +42,7 @@ public class SerialCommunicationHandler extends ListnerHandler{
             e.printStackTrace();
         }
         printer.setSerialCommunicator(serialCommunicator);
+        printer.attachReaderListner(serialCommunicator);
     }
 
 }
