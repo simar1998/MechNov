@@ -88,7 +88,7 @@ public class PrinterCommunicationHandler {
      * Returns all the connected printer object
      * @return
      */
-    public static ArrayList<Printer> getConnectedPrinter(){
+    public static ArrayList<Printer> getConnectedPrinters(){
         ArrayList<Printer> printers = new ArrayList<>();
         for (PrinterBundle printerBundle : PrinterCommunicationHandler.printers){
             if (printerBundle.getPrinterCommThread().getPrinter().getSerialCommunicator().isSerialPortConnected()){

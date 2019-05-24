@@ -111,5 +111,22 @@ public class CommunicationAPI {
         return comPorts;
     }
 
+    @GET
+    @Path("/getConnectedPrinters")
+    @Produces("text/plain")
+    public String getConnectedPrinters(){
+        String connectedPrinters = "";
+        for (Printer printer: PrinterCommunicationHandler.getConnectedPrinters()){
+            connectedPrinters = connectedPrinters + " " +printer.getPrinterName();
+        }
+        PrinterCommunicationHandler.getConnectedPrinters();
+        if (connectedPrinters.isEmpty()){
+            return "No printers are connected to the service";
+        }
+        return connectedPrinters;
+    }
+
+
+
 
 }
