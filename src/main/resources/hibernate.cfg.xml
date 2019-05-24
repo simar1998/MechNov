@@ -31,6 +31,7 @@
         <!--<editor-fold desc="Description">-->
         <mapping class="pojo.printer.Printer"/>
         <mapping class="serialcomms.SerialCommunicator"/>
+        <mapping class="pojo.Command"/>
         <!--</editor-fold>-->
     </session-factory>
 </hibernate-configuration>

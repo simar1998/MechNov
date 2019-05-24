@@ -1,31 +1,43 @@
 package pojo;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 
 /**
  * The type Command.
  */
+@Entity
+@Table(name = "Command")
 public class Command {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
+    int id;
     /**
      * The constant commands.
      */
+    @Transient
     public static ArrayList<Command> commands = new ArrayList<>();
     /**
      * The Firmware
      */
+    @Column(name = "firmware")
     String firmware;
     /**
      * The Command.
-     */
+   */
+    @Column(name = "command")
     String command;
     /**
      * The Command desc.
      */
+    @Column(name = "commandDesc")
     String commandDesc;
     /**
      * The Command desc long.
      */
+    @Column(name = "commandDescLong")
     String commandDescLong;
 
     /**
