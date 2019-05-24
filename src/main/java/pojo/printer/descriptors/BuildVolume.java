@@ -1,21 +1,44 @@
 package pojo.printer.descriptors;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * This Class stores the max values of the build volume
  */
+@Entity
+@Table(name = "BuildVolume")
 public class BuildVolume extends Serializer {
 
+
+    /**
+     * The Id.
+     */
+    @Id
+    @Column(name = "Id")
+    int id;
+
+    /**
+     * The Descriptor.
+     */
+    @Column(name = "Descriptor")
+    String descriptor = "Build Volume";
     /**
      * The X.
      */
+    @Column(name = "X")
     int x;
     /**
      * The Y.
      */
+    @Column(name = "Y")
     int y;
     /**
      * The Z.
      */
+    @Column(name = "Z")
     int z;
 
     /**
@@ -89,5 +112,41 @@ public class BuildVolume extends Serializer {
      */
     public void setZ(int z) {
         this.z = z;
+    }
+
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * Gets descriptor.
+     *
+     * @return the descriptor
+     */
+    public String getDescriptor() {
+        return descriptor;
+    }
+
+    /**
+     * Sets descriptor.
+     *
+     * @param descriptor the descriptor
+     */
+    public void setDescriptor(String descriptor) {
+        this.descriptor = descriptor;
     }
 }

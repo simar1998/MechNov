@@ -4,59 +4,82 @@ import pojo.printer.descriptors.*;
 import serialcomms.SerialCommunicationHandler;
 import serialcomms.SerialCommunicator;
 
+import javax.persistence.*;
+
 /**
  * The type Printer.
  */
+@Entity
+@Table(name = "Printers")
 public class Printer extends SerialCommunicationHandler {
 
     /**
+     * The Id.
+     */
+    @Id
+    @Column(name = "Id")
+    @GeneratedValue
+    int id;
+    /**
      * The Serial communicator.
      */
-    SerialCommunicator serialCommunicator = new SerialCommunicator();
+    @Transient
+    SerialCommunicator serialCommunicator;
 
     /**
      * The Printer name.
      */
+    @Column(name = "PrinterName")
     String printerName;
     /**
      * The Firmware.
      */
+    @Column(name = "Firmware")
     String firmware;
     /**
      * The Printer desc.
      */
+    @Column(name = "PrinterDesc")
     String printerDesc;
 
     /**
      * The Build volume.
      */
+
+    @Transient
     BuildVolume buildVolume;
 
 
     /**
      * The Steps per unit.
      */
+    @Transient
     StepsPerUnit stepsPerUnit = new StepsPerUnit(); //Steps per mm for each axis and the extruder
     /**
      * The Max feedrate.
      */
+    @Transient
     MaxFeedrate maxFeedrate = new MaxFeedrate(); //Max feed rate for each axis and the extruder
     /**
      * The Acceleration settings.
      */
+    @Transient
     AccelerationSettings accelerationSettings = new AccelerationSettings(); //Max acceleration for each axis and the extruder
     /**
      * The Additional info.
      */
+    @Transient
     AdditionalInfo additionalInfo = new AdditionalInfo(); // additional info
     /**
      * The Home offset.
      */
+    @Transient
     HomeOffset homeOffset = new HomeOffset(); //homeoffset
 
     /**
      * The Control loop pid.
      */
+    @Transient
     ControlLoopPID controlLoopPID = new ControlLoopPID(); //ControlLoopPID
 
     /**
@@ -319,11 +342,28 @@ public class Printer extends SerialCommunicationHandler {
         isHomeCentre = homeCentre;
     }
 
+    /**
+     * Store in database.
+     */
     public void storeInDatabase(){
         String stepsPerUnitJson = stepsPerUnit.jsonSerializable(stepsPerUnit);
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
 
-
-
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
 }

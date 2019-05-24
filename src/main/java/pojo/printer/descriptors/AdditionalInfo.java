@@ -1,30 +1,60 @@
 package pojo.printer.descriptors;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.ArrayList;
 
 /**
  * The type Additional info.
  */
+@Entity
+@Table(name = "AdditionalInfo")
 public class AdditionalInfo extends Serializer implements Descriptors {
+
+    /**
+     * The Id.
+     */
+    @Id
+    @Column(name = "Id")
+    int id;
+
+    /**
+     * The Descriptor.
+     */
+    @Column(name = "Descriptor")
+    String descriptor = "Advanced variables";
     /**
      * The Min feed.
      */
-    double minFeed, /**
+    @Column(name = "minFeed")
+    double minFeed;
+    /**
      * The Min travel feed.
      */
-    minTravelFeed, /**
+    @Column(name = "minTravelFeed")
+    double minTravelFeed;
+    /**
      * The Min segment time.
      */
-    minSegmentTime, /**
+    @Column(name = "minSegmentTime")
+    double minSegmentTime;
+    /**
      * The Max xy jerk.
      */
-    maxXYJerk, /**
+    @Column(name = "maxXYJerk")
+    double maxXYJerk;
+    /**
      * The Max e jerk.
      */
-    maxEJerk, /**
+    @Column(name = "maxEJerk")
+    double maxEJerk;
+    /**
      * The Max z jerk.
      */
-    maxZJerk;
+    @Column(name = "maxZJerk")
+    double maxZJerk;
 
     /**
      * Instantiates a new Additional info.
@@ -159,6 +189,41 @@ public class AdditionalInfo extends Serializer implements Descriptors {
         this.maxZJerk = maxZJerk;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * Gets descriptor.
+     *
+     * @return the descriptor
+     */
+    public String getDescriptor() {
+        return descriptor;
+    }
+
+    /**
+     * Sets descriptor.
+     *
+     * @param descriptor the descriptor
+     */
+    public void setDescriptor(String descriptor) {
+        this.descriptor = descriptor;
+    }
 
     @Override
     public void populateObject(ArrayList<String> arrayList) {

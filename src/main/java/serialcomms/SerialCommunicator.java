@@ -10,20 +10,35 @@ import java.util.Scanner;
 /**
  * The type Serial communicator.
  */
+@Entity
+@Table(name = "SerialCommunicator")
 public class SerialCommunicator {
-
 
     /**
      * The Serial port array list.
      */
+    @Transient
     public static ArrayList<SerialPort> serialPortArrayList;
     /**
      * The Is serial port connected.
      */
+    @Transient
     boolean isSerialPortConnected;
 
-    private SerialPort comPort;
+    /**
+     * The Id.
+     */
+    @Id
+    @Column(name = "Id")
+    int id;
+
+    @Transient
+    SerialPort comPort;
+
+    @Column(name = "portDescription")
     private String portDescription;
+
+    @Column(name = "Baud_Rate")
     private int baud_rate;
 
     /**
@@ -66,7 +81,7 @@ public class SerialCommunicator {
      */
     public boolean openConnection(){
         if(comPort.openPort()){
-            try {Thread.sleep(10000);
+            try {Thread.sleep(500);
             serialPortArrayList.add(getSerialPort());
             } catch(Exception e){}
             return true;
@@ -101,7 +116,7 @@ public class SerialCommunicator {
      */
     public void setBaudRate(int baud_rate){
         this.baud_rate = baud_rate;
-        comPort.setBaudRate(baud_rate);
+        comPort.setBaudRate(this.baud_rate);
     }
 
     /**
@@ -171,7 +186,6 @@ public class SerialCommunicator {
      * @param s the s
      */
     public void serialWrite(String s){
-        System.out.println("WRITING TO SERIAL : " + s + " at " + baud_rate + " on " + portDescription);
         //writes the entire string at once.
         comPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         try{Thread.sleep(5);} catch(Exception e){}
@@ -247,8 +261,7 @@ public class SerialCommunicator {
 
     /**
      * Gets the comm ports available
-     *
-     * @return serial port [ ]
+     * @return
      */
     public static SerialPort[] getComPorts() {
         System.out.println("getComPorts() CALLED...... APPLICATION LOOKING FOR PORTS");
@@ -263,12 +276,6 @@ public class SerialCommunicator {
         return serialPorts;
     }
 
-    /**
-     * Create serial communicator serial communicator.
-     *
-     * @param serialPort the serial port
-     * @return the serial communicator
-     */
     public static SerialCommunicator createSerialCommunicator(SerialPort serialPort){
         SerialCommunicator serialCommunicator = new SerialCommunicator();
         serialCommunicator.setPortDescription(serialPort.getPortDescription());
@@ -302,13 +309,21 @@ public class SerialCommunicator {
     public int getBaud_rate() {
         return baud_rate;
     }
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
 
     /**
-     * Sets baud rate.
+     * Sets id.
      *
-     * @param baud_rate the baud rate
+     * @param id the id
      */
-    public void setBaud_rate(int baud_rate) {
-        this.baud_rate = baud_rate;
+    public void setId(int id) {
+        this.id = id;
     }
 }
