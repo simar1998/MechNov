@@ -16,6 +16,7 @@ public class ApplicationSetup extends Application {
         Set<Class<?>> set = new HashSet<>();
         set.add(CORSFilter.class);
         set.add(TestAPI.class);
+        set.add(CommandAPI.class);
         return set;
     }
 }

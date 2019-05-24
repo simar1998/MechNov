@@ -151,4 +151,15 @@ public class Command {
         }
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "Command{" +
+                "id=" + id +
+                ", firmware='" + firmware + '\'' +
+                ", command='" + command + '\'' +
+                ", commandDesc='" + commandDesc + '\'' +
+                ", commandDescLong='" + commandDescLong + '\'' +
+                '}';
+    }
 }
